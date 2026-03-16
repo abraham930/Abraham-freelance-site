@@ -1,4 +1,5 @@
 import '../styles/footer.css'
+const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
 
 /* ------------------------------------------------------------------ */
 /*  EDIT FOOTER LINKS AND SOCIAL URLS HERE                             */
@@ -15,7 +16,7 @@ const SOCIALS = [
   {
     id:    'email',
     label: 'Email Abraham',
-    href:  'mailto:santiagoabraham513@gmail.com',
+    href:  `mailto:${contactEmail}`,
     icon:  (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M3 8L10.89 13.26C11.22 13.48 11.6 13.6 12 13.6C12.4 13.6 12.78 13.48 13.11 13.26L21 8M5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19Z" />

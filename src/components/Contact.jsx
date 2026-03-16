@@ -3,10 +3,6 @@ import '../styles/contact.css'
 const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
 const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
 
-/* ------------------------------------------------------------------ */
-/*  CONFIG — Update this email to change where form submissions go     */
-/* ------------------------------------------------------------------ */
-const CONTACT_EMAIL = 'santiagoabraham513@gmail.com'
 
 /* ------------------------------------------------------------------ */
 /*  CONTACT DETAILS — Edit your info here                              */
