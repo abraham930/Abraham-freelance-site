@@ -3,6 +3,7 @@ import '../styles/contact.css'
 const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL;
 const CONTACT_NUMBER = import.meta.env.VITE_PHONE_NUMBER;
 
+console.log("CONTACT EMAIL:", CONTACT_EMAIL);
 
 /* ------------------------------------------------------------------ */
 /*  CONTACT DETAILS — Edit your info here                              */
