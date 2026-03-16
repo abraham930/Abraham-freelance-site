@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../styles/contact.css'
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
-const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL;
+const CONTACT_NUMBER = import.meta.env.VITE_PHONE_NUMBER;
 
 
 /* ------------------------------------------------------------------ */
@@ -11,8 +11,8 @@ const CONTACT_DETAILS = [
   {
     id:    'email',
     label: 'Email',
-    value: contactEmail,
-    href:  `mailto:${contactEmail}`,
+    value: CONTACT_EMAIL,
+    href:  `mailto:${CONTACT_EMAIL}`,
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M3 8L10.89 13.26C11.22 13.48 11.6 13.6 12 13.6C12.4 13.6 12.78 13.48 13.11 13.26L21 8M5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19Z" />
@@ -22,8 +22,8 @@ const CONTACT_DETAILS = [
   {
     id:    'phone',
     label: 'Phone',
-    value: `0${phoneNumber}`,
-    href:  `tel:+6${phoneNumber}`,
+    value: `0${CONTACT_NUMBER}`,
+    href:  `tel:+6${CONTACT_NUMBER}`,
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" />
