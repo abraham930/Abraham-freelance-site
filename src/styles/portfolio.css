@@ -1,0 +1,315 @@
+/* ============================================================
+   PORTFOLIO SECTION
+   ============================================================ */
+
+.portfolio {
+  background: var(--white);
+}
+
+/* Project item — full-width row layout */
+.portfolio__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--gray-rule);
+  min-height: 460px;
+}
+
+.portfolio__item:last-child {
+  border-bottom: 1px solid var(--gray-rule);
+}
+
+/* Flip image/text order for alternating rows */
+.portfolio__item--reversed .portfolio__image {
+  order: 2;
+}
+.portfolio__item--reversed .portfolio__info {
+  order: 1;
+}
+
+/* Image panel */
+.portfolio__image {
+  position: relative;
+  overflow: hidden;
+  background: var(--off-white);
+}
+
+.portfolio__image img,
+.portfolio__image-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SVG placeholder that looks like a browser screenshot */
+.portfolio__image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--off-white);
+  transition: transform var(--smooth) var(--ease);
+}
+
+.portfolio__item:hover .portfolio__image-placeholder {
+  transform: scale(1.02);
+}
+
+.portfolio__placeholder-inner {
+  width: 85%;
+  max-width: 480px;
+}
+
+.portfolio__browser {
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.12);
+  overflow: hidden;
+  border: 1px solid var(--gray-rule);
+}
+
+.portfolio__browser-bar {
+  background: #f1f1f1;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--gray-rule);
+}
+
+.portfolio__browser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.portfolio__browser-dot:nth-child(1) { background: #ff5f57; }
+.portfolio__browser-dot:nth-child(2) { background: #ffbd2e; }
+.portfolio__browser-dot:nth-child(3) { background: #28c840; }
+
+.portfolio__browser-url {
+  flex: 1;
+  margin-left: 6px;
+  background: var(--white);
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--gray-mid);
+  border: 1px solid var(--gray-rule);
+}
+
+.portfolio__browser-body {
+  padding: 16px;
+  min-height: 200px;
+  background: var(--white);
+}
+
+/* Skeleton lines inside the fake browser */
+.portfolio__skeleton-bar {
+  height: 10px;
+  border-radius: 3px;
+  background: var(--off-white);
+  margin-bottom: 8px;
+}
+
+.portfolio__skeleton-bar--dark {
+  background: #e0e0e0;
+}
+
+.portfolio__skeleton-bar--accent {
+  background: rgba(220, 38, 38, 0.15);
+  width: 40% !important;
+}
+
+.portfolio__skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.portfolio__skeleton-card {
+  height: 70px;
+  background: var(--off-white);
+  border-radius: 3px;
+  border: 1px solid var(--gray-rule);
+}
+
+/* Info panel */
+.portfolio__info {
+  padding: var(--space-xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portfolio__number {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-bottom: var(--space-sm);
+}
+
+.portfolio__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  margin-bottom: var(--space-sm);
+}
+
+.portfolio__industry {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--black);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-md);
+}
+
+.portfolio__description {
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+  line-height: 1.75;
+  margin-bottom: var(--space-md);
+  max-width: 44ch;
+}
+
+/* Feature bullets */
+.portfolio__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: var(--space-lg);
+}
+
+.portfolio__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--black-mid);
+  line-height: 1.5;
+}
+
+.portfolio__feature-dot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-top: 0.45rem;
+}
+
+/* ---- Clickable image link panel ---- */
+.portfolio__image--link {
+  display: block;         /* override default <a> inline */
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover overlay that appears on image hover */
+.portfolio__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--smooth) var(--ease);
+}
+
+.portfolio__image--link:hover .portfolio__image-overlay {
+  opacity: 1;
+}
+
+.portfolio__image-overlay-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0.65rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius);
+  backdrop-filter: blur(4px);
+  transition: border-color var(--fast), background var(--fast);
+}
+
+.portfolio__image--link:hover .portfolio__image-overlay-label {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+/* ---- Live demo CTA link in info panel ---- */
+.portfolio__live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 1px;
+  text-decoration: none;
+  transition: color var(--fast), border-color var(--fast);
+  margin-top: calc(-1 * var(--space-sm)); /* pull up — features already has bottom margin */
+}
+
+.portfolio__live-link:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .portfolio__item {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .portfolio__item--reversed .portfolio__image,
+  .portfolio__item--reversed .portfolio__info {
+    order: unset;
+  }
+
+  .portfolio__image {
+    min-height: 280px;
+  }
+
+  .portfolio__info {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio__image {
+    min-height: 220px;
+  }
+
+  .portfolio__info {
+    padding: var(--space-md);
+  }
+
+  .portfolio__skeleton-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

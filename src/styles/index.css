@@ -1,0 +1,253 @@
+/* ============================================================
+   GLOBAL DESIGN SYSTEM
+   Abraham Santiago — Freelance Portfolio
+   Editorial minimalism. Black & white. Red for action only.
+   ============================================================ */
+
+:root {
+  /* --- Palette --- */
+  --black:        #0a0a0a;
+  --black-soft:   #1a1a1a;
+  --black-mid:    #2a2a2a;
+  --gray-dark:    #444444;
+  --gray-mid:     #777777;
+  --gray-light:   #aaaaaa;
+  --gray-rule:    #e0e0e0;
+  --off-white:    #f4f0eb;
+  --white:        #fafafa;
+  --red:          #DC2626;
+  --red-dark:     #b91c1c;
+  --red-hover:    #ef4444;
+
+  /* --- Typography --- */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* --- Spacing --- */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.75rem;
+  --space-lg:  3rem;
+  --space-xl:  5rem;
+  --space-xxl: 8rem;
+
+  /* --- Layout --- */
+  --max-width: 1120px;
+  --radius:    2px;
+
+  /* --- Transitions --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --fast: 150ms;
+  --smooth: 280ms;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+button { cursor: pointer; border: none; font-family: var(--font-body); }
+
+/* ---- Layout wrapper ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ---- Section padding ---- */
+.section {
+  padding: var(--space-xxl) 0;
+}
+
+.section--off-white {
+  background: var(--off-white);
+}
+
+.section--black {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ---- Section header ---- */
+.section-header {
+  margin-bottom: var(--space-xl);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: var(--space-sm);
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--gray-light);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--black);
+  letter-spacing: -0.01em;
+}
+
+.section-title--light {
+  color: var(--white);
+}
+
+.section-subtitle {
+  margin-top: var(--space-sm);
+  font-size: 1.05rem;
+  color: var(--gray-dark);
+  line-height: 1.75;
+  max-width: 52ch;
+}
+
+.section-subtitle--light {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ---- Divider ---- */
+.rule {
+  border: none;
+  border-top: 1px solid var(--gray-rule);
+}
+
+.rule--black {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* ---- CTA Button (RED — use sparingly) ---- */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius);
+  transition: background var(--fast), transform var(--fast), box-shadow var(--fast);
+  box-shadow: 0 2px 12px rgba(220, 38, 38, 0.3);
+}
+
+.btn-cta:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* ---- Ghost button ---- */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  color: var(--black);
+  border: 1.5px solid var(--black);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius);
+  transition: all var(--smooth) var(--ease);
+}
+
+.btn-ghost:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.btn-ghost--light {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.btn-ghost--light:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* ---- Entrance animation ---- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.65s var(--ease) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.22s; }
+.delay-3 { animation-delay: 0.34s; }
+.delay-4 { animation-delay: 0.46s; }
+.delay-5 { animation-delay: 0.58s; }
+
+/* ============================================================
+   RESPONSIVE GLOBALS
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  .section {
+    padding: var(--space-xl) 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  .section {
+    padding: var(--space-lg) 0;
+  }
+}

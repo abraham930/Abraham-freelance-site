@@ -1,0 +1,141 @@
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
+
+.services {
+  background: var(--off-white);
+}
+
+/* Grid of service cards */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-rule);
+  border: 1px solid var(--gray-rule);
+  margin-top: var(--space-xl);
+}
+
+.service-card {
+  background: var(--white);
+  padding: var(--space-lg) var(--space-md);
+  position: relative;
+  transition: background var(--smooth) var(--ease);
+}
+
+.service-card:hover {
+  background: var(--black);
+}
+
+/* Top bar — reveals on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--smooth) var(--ease);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card__icon {
+  width: 40px;
+  height: 40px;
+  background: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius);
+  color: var(--black);
+  transition: background var(--smooth) var(--ease), color var(--smooth) var(--ease);
+}
+
+.service-card:hover .service-card__icon {
+  background: rgba(220,38,38,0.15);
+  color: var(--red);
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  transition: color var(--smooth) var(--ease);
+}
+
+.service-card:hover .service-card__title {
+  color: var(--white);
+}
+
+.service-card__body {
+  font-size: 0.86rem;
+  color: var(--gray-dark);
+  line-height: 1.7;
+  transition: color var(--smooth) var(--ease);
+}
+
+.service-card:hover .service-card__body {
+  color: rgba(255,255,255,0.55);
+}
+
+/* "What's included" tag line */
+.service-card__tag {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  transition: color var(--smooth) var(--ease);
+}
+
+.service-card:hover .service-card__tag {
+  color: rgba(255,255,255,0.3);
+}
+
+/* Bottom CTA strip */
+.services__cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white);
+  border: 1px solid var(--gray-rule);
+}
+
+.services__cta-strip p {
+  font-size: 0.92rem;
+  color: var(--gray-dark);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
